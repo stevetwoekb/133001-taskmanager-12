@@ -3,8 +3,8 @@
 const TASK_COUNT = 3;
 
 const createSiteMenuTemplate = () => {
-    return (
-        `
+  return (
+    `
             <section class="control__btn-wrap">
             <input
                 type="radio"
@@ -34,12 +34,12 @@ const createSiteMenuTemplate = () => {
             >
             </section>
       `
-    )
+  )
 };
 
 const createSiteFilterTemplate = () => {
-    return (
-        `
+  return (
+    `
       <section class="main__filter filter container">
       <input
         type="radio"
@@ -100,12 +100,12 @@ const createSiteFilterTemplate = () => {
       >
     </section>
     `
-    )
+  )
 };
 
 const createSiteBoardTemplate = () => {
-    return (
-        `
+  return (
+    `
             <section class="board container">
             <div class="board__filter-list">
                 <a href="#" class="board__filter" data-sort-type="default">SORT BY DEFAULT</a>
@@ -117,12 +117,12 @@ const createSiteBoardTemplate = () => {
             </div>
             </section>
         `
-    )
+  )
 };
 
 const createTaskTemplate = () => {
-    return (
-        `
+  return (
+    `
             <article class="card card--black">
             <div class="card__form">
             <div class="card__inner">
@@ -167,12 +167,12 @@ const createTaskTemplate = () => {
             </div>
             </article>
         `
-    )
+  )
 };
 
 const createTaskEditFormTemplate = () => {
-    return (
-        `
+  return (
+    `
             <article class="card card--edit card--yellow card--repeat">
             <form class="card__form" method="get">
                 <div class="card__inner">
@@ -371,17 +371,17 @@ const createTaskEditFormTemplate = () => {
             </form>
             </article>
 		`
-    )
+  )
 };
 
 const createLoadMoreButtonTemplate = () => {
-    return (
-        `<button class="load-more" type="button">load more</button>`
-    );
+  return (
+    `<button class="load-more" type="button">load more</button>`
+  );
 };
 
 const render = (container, template, place) => {
-    container.insertAdjacentHTML(place, template);
+  container.insertAdjacentHTML(place, template);
 };
 
 const mainElement = document.querySelector('.main');
@@ -396,7 +396,7 @@ const tasksContainerElement = boardElement.querySelector('.board__tasks');
 
 render(tasksContainerElement, createTaskEditFormTemplate(), `beforeend`);
 for (let i = 0; i < TASK_COUNT; i++) {
-    render(tasksContainerElement, createTaskTemplate(), `beforeend`);
+  render(tasksContainerElement, createTaskTemplate(), `beforeend`);
 };
 
 render(boardElement, createLoadMoreButtonTemplate(), `beforeend`);
