@@ -380,23 +380,28 @@ const createLoadMoreButtonTemplate = () => {
   );
 };
 
-const render = (container, template, place) => {
+const render = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template);
 };
 
 const mainElement = document.querySelector(`.main`);
 const headerElement = mainElement.querySelector(`.main__control`);
 
-render(headerElement, createSiteMenuTemplate(), `beforeend`);
-render(mainElement, createSiteFilterTemplate(), `beforeend`);
-render(mainElement, createSiteBoardTemplate(), `beforeend`);
+render(headerElement, createSiteMenuTemplate());
+render(mainElement, createSiteFilterTemplate());
+render(mainElement, createSiteBoardTemplate());
 
 const boardElement = mainElement.querySelector(`.board`);
 const tasksContainerElement = boardElement.querySelector(`.board__tasks`);
 
-render(tasksContainerElement, createTaskEditFormTemplate(), `beforeend`);
-for (let i = 0; i < TASK_COUNT; i++) {
-  render(tasksContainerElement, createTaskTemplate(), `beforeend`);
-}
+render(tasksContainerElement, createTaskEditFormTemplate());
 
-render(boardElement, createLoadMoreButtonTemplate(), `beforeend`);
+const repeat = (count, fn) => {
+  Array(count).fill(``).forEach(fn);
+};
+
+repeat(TASK_COUNT, () => {
+  render(tasksContainerElement, createTaskTemplate());
+});
+
+render(boardElement, createLoadMoreButtonTemplate());
