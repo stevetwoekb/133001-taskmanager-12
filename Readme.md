@@ -1,7 +1,7 @@
 # Личный проект «Менеджер задач» [![Build status][travis-image]][travis-url]
 
 * Студент: [Степан Нифонтов](https://up.htmlacademy.ru/ecmascript/12/user/133001).
-* Наставник: `Неизвестно`.
+* Наставник: [Магомед Кандаев](https://up.htmlacademy.ru/ecmascript/12/user/161600).
 
 ---
 
