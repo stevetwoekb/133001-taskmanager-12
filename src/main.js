@@ -4,7 +4,7 @@ import {createSiteBoardTemplate} from "./view/site-board.js";
 import {createTaskTemplate} from "./view/task.js";
 import {createTaskEditFormTemplate} from "./view/edit-task-form.js";
 import {createLoadMoreButtonTemplate} from "./view/load-more-button.js";
-import {render, repeat} from "./view/utils.js";
+import {render, repeat} from "./utils.js";
 
 const TASK_COUNT = 3;
 
