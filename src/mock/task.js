@@ -1,5 +1,5 @@
 import {COLORS} from "../const.js";
-import {getRandomInteger} from '../utils';
+import {getRandomInteger, getRandomBoolean} from '../utils';
 
 const generateDescription = () => {
   const descriptions = [
@@ -13,7 +13,7 @@ const generateDescription = () => {
 };
 
 const generateDate = () => {
-  const isDate = Boolean(getRandomInteger(0, 1));
+  const isDate = getRandomBoolean();
 
   if (isDate) {
     return null;
@@ -32,13 +32,13 @@ const generateDate = () => {
 
 const generateRepeating = () => {
   return {
-    mo: false,
-    tu: false,
-    we: Boolean(getRandomInteger(0, 1)),
-    th: false,
-    fr: Boolean(getRandomInteger(0, 1)),
-    sa: false,
-    su: false
+    mo: getRandomBoolean(),
+    tu: getRandomBoolean(),
+    we: getRandomBoolean(),
+    th: getRandomBoolean(),
+    fr: getRandomBoolean(),
+    sa: getRandomBoolean(),
+    su: getRandomBoolean()
   };
 };
 const getRandomColor = () => {
@@ -65,7 +65,7 @@ export const generateTask = () => {
     dueDate,
     repeating,
     color: getRandomColor(),
-    isArchive: Boolean(getRandomInteger(0, 1)),
-    isFavorite: Boolean(getRandomInteger(0, 1))
+    isArchive: getRandomBoolean(),
+    isFavorite: getRandomBoolean()
   };
 };
