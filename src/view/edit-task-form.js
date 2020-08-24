@@ -133,7 +133,7 @@ const createTaskEditFormTemplate = (task) => {
   );
 };
 
-export default class EditTaskFormView {
+export default class EditTaskForm {
   constructor(task) {
     this._element = null;
     this._task = task || BLANK_TASK;

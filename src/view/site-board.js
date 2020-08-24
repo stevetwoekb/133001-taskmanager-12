@@ -15,7 +15,7 @@ const createSiteBoardTemplate = () => {
 };
 
 
-export default class SiteBoardView {
+export default class SiteBoard {
   constructor() {
     this._element = null;
   }

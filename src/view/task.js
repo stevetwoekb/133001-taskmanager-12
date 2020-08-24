@@ -68,7 +68,7 @@ export const createTaskTemplate = (task) => {
   );
 };
 
-export default class TaskView {
+export default class Task {
   constructor(task) {
     this._element = null;
     this._task = task;
