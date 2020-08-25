@@ -31,11 +31,16 @@ const renderTask = (taskListElement, task) => {
     taskListElement.replaceChild(taskComponent.getElement(), taskEditComponent.getElement());
   };
 
+  const closeEditCardForm = (evt) => {
+    evt.preventDefault();
+    replaceFormToCard();
+    document.removeEventListener(`keydown`, onEscKeyDown);
+  };
+
+
   const onEscKeyDown = (evt) => {
     if (evt.key === `Escape` || evt.key === `Esc`) {
-      evt.preventDefault();
-      replaceFormToCard();
-      document.removeEventListener(`keydown`, onEscKeyDown);
+      closeEditCardForm(evt);
     }
   };
 
@@ -46,9 +51,7 @@ const renderTask = (taskListElement, task) => {
   });
 
   taskEditComponent.getElement().querySelector(`form`).addEventListener(`submit`, (evt) => {
-    evt.preventDefault();
-    replaceFormToCard();
-    document.removeEventListener(`keydown`, onEscKeyDown);
+    closeEditCardForm(evt);
   });
 
 
