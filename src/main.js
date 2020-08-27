@@ -31,8 +31,7 @@ const renderTask = (taskListElement, task) => {
     taskListElement.replaceChild(taskComponent.getElement(), taskEditComponent.getElement());
   };
 
-  const closeEditCardForm = (evt) => {
-    evt.preventDefault();
+  const closeEditCardForm = () => {
     replaceFormToCard();
     document.removeEventListener(`keydown`, onEscKeyDown);
   };
@@ -50,8 +49,8 @@ const renderTask = (taskListElement, task) => {
     document.addEventListener(`keydown`, onEscKeyDown);
   });
 
-  taskEditComponent.getElement().querySelector(`form`).addEventListener(`submit`, (evt) => {
-    closeEditCardForm(evt);
+  taskEditComponent.getElement().querySelector(`form`).addEventListener(`submit`, () => {
+    closeEditCardForm();
   });
 
 
